@@ -3,3 +3,11 @@
 	<%= image_tag("waldo.jpg", size: "900x600", alt: "Find Waldo", class: 'myImg', id: "myImgId") %>
 	<div class="myBox hidden", id="boxId"></div>
 </div>
+<div class="form-popup hidden" id="myForm">
+	<%= form_for Score.new, :html => { class: 'form-container'} do |f| %>
+	    <%= f.label :user %>
+	    <%= f.text_field :user, class: "form-control" %>
+	  	<%= f.hidden_field :score, value: nil, id: "time" %>
+	  	<%= f.submit 'Submit' %>
+	<% end %>
+</div>

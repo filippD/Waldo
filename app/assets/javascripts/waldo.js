@@ -56,7 +56,12 @@ const isWaldo = (myImg, startTime) => {
     // data: { data_value: JSON.stringify(coordinates) },
     success: function(repsonse){
       if (repsonse === true) { 
-        alert(`You won in ${timer(startTime)} seconds!`) 
+        const score = timer(startTime)
+        alert(`You won in ${score} seconds!`)
+        const form = document.getElementById("myForm")
+        const timeField = document.getElementById("time")
+        timeField.value = score
+        form.classList.remove("hidden")
       }
     },
     error: function(repsonse){}

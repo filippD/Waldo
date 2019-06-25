@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'scores/index'
+  resources :scores, only: [:create, :index]
   get 'waldo/index'
   get 'waldo/is_waldo'
   get 'home/index'
