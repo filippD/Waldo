@@ -1,11 +1,11 @@
 class WaldoController < ApplicationController
   def index
   end
-
-  def check
+  
+  def is_waldo
 	x = params[:x].to_i
 	y = params[:y].to_i
-	if x <= 655 && x >= 575 && y >= 125 && y <= 195
+	if x <= 410 && x >= 360 && y >= 390 && y <= 490
 		render json: 'true'
 	else
 		render json: 'false'

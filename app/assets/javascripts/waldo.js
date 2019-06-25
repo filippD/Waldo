@@ -15,49 +15,63 @@ const findPosition = (oElement) => {
 }
 
 const getCoordinates = (myImg, e) => {
-  let PosX = 0;
-  let PosY = 0;
+  let posX = 0;
+  let posY = 0;
   let ImgPos = findPosition(myImg);
   if (!e) var e = window.event;
   if (e.pageX || e.pageY)
   {
-    PosX = e.pageX;
-    PosY = e.pageY;
+    posX = e.pageX;
+    posY = e.pageY;
   }
   else if (e.clientX || e.clientY)
     {
-      PosX = e.clientX + document.body.scrollLeft
+      posX = e.clientX + document.body.scrollLeft
         + document.documentElement.scrollLeft;
-      PosY = e.clientY + document.body.scrollTop
+      posY = e.clientY + document.body.scrollTop
         + document.documentElement.scrollTop;
     }
-  imgPosX = PosX - ImgPos[0];
-  imgPosY = PosY - ImgPos[1];
-
-  // console.log(imgPosX, imgPosY)
-  var box = document.getElementById('boxId');
-  box.style.left = PosX-25+'px';
-  box.style.top = PosY-25+'px';
+  imgPosX = posX - ImgPos[0];
+  imgPosY = posY - ImgPos[1];
+  changeBoxPosition(posX, posY)
   return [imgPosX, imgPosY]
 }
 
-const isWaldo = (myImg) => {
-	let coordinates = getCoordinates(myImg)
-	let posX = coordinates[0];
-	let posY = coordinates[1];
-  // console.log(coordinates)
+const changeBoxPosition = (x, y) => {
+  const box = document.getElementById('boxId');
+  if (box.classList.contains("hidden")) {
+    box.classList.remove("hidden")
+  }
+  box.style.left = x-15+'px';
+  box.style.top = y-15+'px';
+}
+
+const isWaldo = (myImg, startTime) => {
+  let coordinates = getCoordinates(myImg)
+  let posX = coordinates[0];
+  let posY = coordinates[1];
   Rails.ajax({
     type: "get",
-    url: `/waldo/check?x=${posX}&y=${posY}`,
+    url: `/waldo/is_waldo?x=${posX}&y=${posY}`,
     // data: { data_value: JSON.stringify(coordinates) },
-    success: function(repsonse){console.log(repsonse)},
-    error: function(repsonse){console.log(repsonse)}
+    success: function(repsonse){
+      if (repsonse === true) { 
+        alert(`You won in ${timer(startTime)} seconds!`) 
+      }
+    },
+    error: function(repsonse){}
   })
 }
 
-const findWaldo = () => {
-	const myImg = document.getElementById("myImgId");
-	myImg.addEventListener('click', function() {isWaldo(myImg)})
+const timer = (startTime) => {
+  const endTime = Date.now()
+  return (endTime - startTime)/1000
+}
+
+const findWaldo = (startTime) => {
+  startTime = Date.now()
+  const myImg = document.getElementById("myImgId");
+  myImg.addEventListener('click', function() {isWaldo(myImg, startTime)})
 }
 
 

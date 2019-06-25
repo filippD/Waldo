@@ -4,8 +4,8 @@
 
 
 .myBox {
-	height: 50px;
-	width: 50px;
+	height: 30px;
+	width: 30px;
 	border: 3px solid black;
 	position: absolute;
 }
@@ -17,4 +17,8 @@
 
 .myImg {
 	margin: 0 auto;
+}
+
+.hidden {
+	display: none;
 }
