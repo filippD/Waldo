@@ -1,3 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 30% 30%;
+	justify-content: space-around;
+	margin-bottom: 15px; 
+}
+
+.txt-lower {
+	margin-top: 50px;
+}
+
+.home-main {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.start-btn {
+	font-size: 1.5em;
+	background: #c4dee0;
+	padding: 10px 35px;
+	color: black;
+	border-radius: 5px;
+	text-decoration: none;
+}

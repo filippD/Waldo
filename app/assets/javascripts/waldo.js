@@ -57,10 +57,11 @@ const isWaldo = (myImg, startTime) => {
     success: function(repsonse){
       if (repsonse === true) { 
         const score = timer(startTime)
-        alert(`You won in ${score} seconds!`)
         const form = document.getElementById("myForm")
         const timeField = document.getElementById("time")
         const main = document.getElementById("main")
+        const text = document.getElementById("formText")
+        text.innerHTML = `You won in ${score} seconds!`
         timeField.value = score
         form.classList.remove("hidden")
         main.classList.add("fade")
@@ -76,10 +77,19 @@ const timer = (startTime) => {
 }
 
 const findWaldo = (startTime) => {
+  const btnDiv = document.getElementById("startButton")
+  const main = document.getElementById("main")
+  btnDiv.classList.add("hidden")
+  main.classList.remove("fade")
   startTime = Date.now()
   const myImg = document.getElementById("myImgId");
   myImg.addEventListener('click', function() {isWaldo(myImg, startTime)})
 }
 
+const startGame = () => {
+  const btn = document.getElementById("myBtn")
+  btn.addEventListener("click", () => { findWaldo()  })
+}
 
-document.addEventListener("turbolinks:load", function() { findWaldo() })
+
+document.addEventListener("turbolinks:load", function() { startGame() })

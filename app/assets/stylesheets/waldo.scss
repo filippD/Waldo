@@ -13,10 +13,6 @@ body {
 	position: absolute;
 }
 
-.main {
-	width: 100%;
-	text-align: center;
-}
 
 .myImg {
 	margin: 0 auto;
@@ -41,6 +37,7 @@ body {
   width: 500px;
   height: 150px;
   background-color: white;
+  text-align: center;
 }
 
 /* Full-width input fields */
@@ -70,9 +67,10 @@ body {
   opacity: 0.8;
 }
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
+.form-text {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
 }
 
 /* Add some hover effects to buttons */
@@ -83,3 +81,17 @@ body {
 .fade {
   opacity: 0.3;
 }
+
+.btn-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px; /* Negative half of height. */
+  margin-left: -30px;
+}
+
+.my-btn {
+  padding: 16px 40px;
+  margin:0;
+}
+

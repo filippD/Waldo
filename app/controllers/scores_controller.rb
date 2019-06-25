@@ -9,7 +9,8 @@ def create
   end
 
   def index
-  	@scores = Score.all
+  	@scores = Score.order(score: :asc).limit(5)
+    @user_score = Score.last
   end
 
   private
