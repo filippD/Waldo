@@ -1,27 +1,16 @@
 <div class="main">
 	<h1>Top Scores</h1>
 	<div class="scores">
-		<% @scores.each do |score| %>
-		<div class="score-user">
-			<p><%= score.user %></p>
-		</div>
-		<div class="score-num">
-			<p><%= score.score %></p>
-		</div>
-		<% end %>	
+		<%= render @scores %>	
 	</div>
 	<div>
 		<h2>Your score:</h2>
 		<div class="scores">
-			<div class="score-user">
-				<p><%= @user_score.user %></p>
-			</div>
-			<div class="score-num">
-				<p><%= @user_score.score %></p>
-			</div>
+			<%= render "score", score: @user_score %>
 		</div>
 	</div>
-	<p><%= link_to "Play again", waldo_index_path %></p>
-	<p><%= link_to "Homepage", root_path %></div></p>
+	<%= link_to "Play again", waldo_index_path, class: "btn score-btn" %>
+	<%= link_to "Homepage", root_path, class: "btn score-btn" %>
+</div>
 </div>
 

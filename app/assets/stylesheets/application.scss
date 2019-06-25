@@ -13,13 +13,26 @@
  *= require_tree .
  *= require_self
  */
-
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
 body {
 	background: #eefde6;
+	font-family: 'Indie Flower', cursive;
+	font-size: 1.2em;
 }
 
 .main {
 	width: 100%;
 	text-align: center;
+}
+
+.btn {
+	background: #c4dee0;
+	padding: 10px 35px;
+	color: black;
+	border-radius: 5px;
+	text-decoration: none;
+	&:hover {
+		background: #97b4b7;
+	}
 }

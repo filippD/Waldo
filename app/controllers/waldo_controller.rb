@@ -1,4 +1,5 @@
 class WaldoController < ApplicationController
+
   def index
   end
   
@@ -11,4 +12,5 @@ class WaldoController < ApplicationController
 		render json: 'false'
 	end
   end
+
 end

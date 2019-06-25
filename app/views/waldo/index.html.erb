@@ -5,7 +5,7 @@
 </div>
 <div class="form-popup hidden" id="myForm">
 	<%= form_for Score.new, :html => { class: 'form-container'} do |f| %>
-		<p class="form-text", id="formText">asdasdads</p>
+		<p class="form-text", id="formText"></p>
 	    <%= f.text_field :user, placeholder: "Enter your name to save your score" %>
 	  	<%= f.hidden_field :score, value: nil, id: "time" %>
 	  	<%= f.submit 'Submit' %>
