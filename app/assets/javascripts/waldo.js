@@ -60,8 +60,10 @@ const isWaldo = (myImg, startTime) => {
         alert(`You won in ${score} seconds!`)
         const form = document.getElementById("myForm")
         const timeField = document.getElementById("time")
+        const main = document.getElementById("main")
         timeField.value = score
         form.classList.remove("hidden")
+        main.classList.add("fade")
       }
     },
     error: function(repsonse){}
