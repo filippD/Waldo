@@ -34,7 +34,7 @@ const getCoordinates = (myImg, e) => {
   imgPosX = PosX - ImgPos[0];
   imgPosY = PosY - ImgPos[1];
 
-  console.log(imgPosX, imgPosY)
+  // console.log(imgPosX, imgPosY)
   var box = document.getElementById('boxId');
   box.style.left = PosX-25+'px';
   box.style.top = PosY-25+'px';
@@ -45,12 +45,14 @@ const isWaldo = (myImg) => {
 	let coordinates = getCoordinates(myImg)
 	let posX = coordinates[0];
 	let posY = coordinates[1];
-	if (posX <= 655 && posX >= 575) {
-		if (posY >= 125 && posY <= 195) {
-			console.log('Found!')
-		}
-	}
-
+  // console.log(coordinates)
+  Rails.ajax({
+    type: "get",
+    url: `/waldo/check?x=${posX}&y=${posY}`,
+    // data: { data_value: JSON.stringify(coordinates) },
+    success: function(repsonse){console.log(repsonse)},
+    error: function(repsonse){console.log(repsonse)}
+  })
 }
 
 const findWaldo = () => {
