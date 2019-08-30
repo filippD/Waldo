@@ -1,0 +1,28 @@
+// Place all the styles related to the scores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.scores {
+	width: 400px;
+	background: #c4dee0;
+	margin: 15px auto;
+	padding: 5px 10px;
+	display: grid;
+	grid-template-columns: 180px 180px;
+	justify-content: space-around;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.score-num {
+	text-align: right;
+}
+
+.score-user {
+	text-align: left;
+}
+
+.score-btn {
+	margin: 10px;
+}

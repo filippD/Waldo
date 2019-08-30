@@ -1,3 +1,93 @@
 // Place all the styles related to the Waldo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.myBox {
+	height: 30px;
+	width: 30px;
+	border: 3px solid black;
+	position: absolute;
+}
+
+
+.myImg {
+	margin: 0 auto;
+}
+
+.hidden {
+	display: none;
+}
+
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px;
+  border: 2px solid grey;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  width: 500px;
+  height: 150px;
+  background-color: white;
+  text-align: center;
+}
+
+/* Full-width input fields */
+.form-container input[type=text] {
+  width: 100%;
+  padding: 15px 0;
+  margin: 10px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-text {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0.3;
+}
+
+.btn-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px; /* Negative half of height. */
+  margin-left: -30px;
+}
+
+.my-btn {
+  padding: 16px 40px;
+  margin:0;
+}
+

@@ -1,0 +1,16 @@
+<div class="main">
+	<h1>Top Scores</h1>
+	<div class="scores">
+		<%= render @scores %>	
+	</div>
+	<div>
+		<h2>Your score:</h2>
+		<div class="scores">
+			<%= render "score", score: @user_score %>
+		</div>
+	</div>
+	<%= link_to "Play again", waldo_index_path, class: "btn score-btn" %>
+	<%= link_to "Homepage", root_path, class: "btn score-btn" %>
+</div>
+</div>
+

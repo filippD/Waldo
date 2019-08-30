@@ -1,2 +1,17 @@
-<h1>Waldo#index</h1>
-<p>Find me in app/views/waldo/index.html.erb</p>
+<div class="main fade" id="main">
+	<h1>Find Waldo</h1>
+	<%= image_tag("waldo.jpg", size: "900x600", alt: "Find Waldo", class: 'myImg', id: "myImgId") %>
+	<div class="myBox hidden", id="boxId"></div>
+</div>
+<div class="form-popup hidden" id="myForm">
+	<%= form_for Score.new, :html => { class: 'form-container'} do |f| %>
+		<p class="form-text", id="formText"></p>
+	    <%= f.text_field :user, placeholder: "Enter your name to save your score" %>
+	  	<%= f.hidden_field :score, value: nil, id: "time" %>
+	  	<%= f.submit 'Submit' %>
+	<% end %>
+</div>
+
+<div class="btn-popup" id="startButton">
+	<button class="my-btn" id="myBtn">Start</button>
+</div>
