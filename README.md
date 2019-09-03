@@ -9,4 +9,10 @@ To run the app
 1. Clone this repo
 2. Run `bundle install`
 3. Run `rails s`
-4. Open localhost:3000 on your browser 
+4. Open localhost:3000 on your browser
+
+
+## Technology used
+
+* Ruby in Rails
+* Javascript
