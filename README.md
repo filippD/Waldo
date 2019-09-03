@@ -7,6 +7,6 @@ Built from scratch as a part of Microverse Main Ciricculum with Ruby on Rails an
 To run the app
 
 1. Clone this repo
-2. Run `gem install`
+2. Run `bundle install`
 3. Run `rails s`
 4. Open localhost:3000 on your browser 
