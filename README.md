@@ -35,7 +35,7 @@ Run `bundle install` to install all project dependencies.
 In order to set up the database run the following command:
 ```
 rails db:create db:migrate
-
+```
 ### To run the app
 
 1. Clone this repo
